@@ -16,6 +16,16 @@ function Index(props) {
             [event.target.name]: event.target.value // dynamically creates key value pair for identifying inputs and values as part of the form (name, image, title and values from input)
         }))
     }
+    //callback function - prevState allows referenevees to objects outside the app like web apis
+
+
+  //   const handleChange = (event) => {
+  //     setNewForm({ 
+  //         ...newForm, 
+  //         [event.target.name]: event.target.value 
+  //     })
+  // }
+
     // handleSubmit - will submit our new user for creation
     const handleSubmit = (event) => {
         event.preventDefault()

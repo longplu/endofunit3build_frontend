@@ -52,6 +52,17 @@ function Main(props) {
 
                 <Route path="/people/:id" render={(rp) => (
                     <Show 
+                        
+                        {...rp}
+                        updatePeople={updatePeople}
+                        deletePeople={deletePeople}
+                        people={people} 
+                    />
+                    
+                )} />
+
+                <Route path="/people/:id" render={(rp) => (
+                    <Show 
                         {...rp}
                         updatePeople={updatePeople}
                         deletePeople={deletePeople}
