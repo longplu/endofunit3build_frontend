@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Index from '../pages/Index'
 import Show from '../pages/Show'
 
@@ -51,23 +51,18 @@ function Main(props) {
                 </Route>
 
                 <Route path="/people/:id" render={(rp) => (
-                    <Show 
-                        
-                        {...rp}
-                        updatePeople={updatePeople}
-                        deletePeople={deletePeople}
-                        people={people} 
-                    />
-                    
-                )} />
+                    props.user ?
 
-                <Route path="/people/:id" render={(rp) => (
                     <Show 
                         {...rp}
                         updatePeople={updatePeople}
                         deletePeople={deletePeople}
                         people={people} 
                     />
+
+                    :
+
+                    <Redirect to="/" />
                 )} />
             </Switch>
         </main>
